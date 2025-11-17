@@ -9,7 +9,7 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task0.V20.Test
         public void CheckedExistsFile()
         {
             DataService ds = new DataService();
-            string path = @"C:\Users\Input\source\repos\Tyuiu.SlokvaGA.Sprint5\Tyuiu.SlokvaGA.Sprint5.Task0.V20\bin\Debug\net8.0\OutPutFileTask0.txt";
+            string path = @"C:\Users\Input\source\repos\Tyuiu.SlokvaGA.Sprint5\Tyuiu.SlokvaGA.Sprint5.Task0.V20\bin\Debug\OutPutFileTask0.txt";
             int x = 2;
             string fp = ds.SaveToFileTextData(x);
             Assert.IsTrue(File.Exists(fp));
