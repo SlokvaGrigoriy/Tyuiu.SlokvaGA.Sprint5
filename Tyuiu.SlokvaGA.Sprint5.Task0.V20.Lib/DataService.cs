@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Globalization;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.SlokvaGA.Sprint5.Task0.V20.Lib
 {
@@ -9,7 +10,7 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task0.V20.Lib
             string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask0.txt";
             double exp = (2.12*Math.Pow(2,3) + 1.05*Math.Pow(2,2) + 4.1*2*2);
             exp = Math.Round(exp, 3);
-            string res = exp.ToString().Replace(".", ",");
+            string res = exp.ToString(CultureInfo.GetCultureInfo("ru-RU"));
             File.WriteAllText(path, res);
             return path;
         }
