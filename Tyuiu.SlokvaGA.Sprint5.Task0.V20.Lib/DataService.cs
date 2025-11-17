@@ -9,7 +9,10 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task0.V20.Lib
             string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask0.txt";
             double exp = (2.12*Math.Pow(2,3) + 1.05*Math.Pow(2,2) + 4.1*2*2);
             exp = Math.Round(exp, 3);
-            File.WriteAllText(path, Convert.ToString(exp));
+            string tp = Path.GetTempPath();
+            string fn = "OutPutFileTask0.txt";
+            string fp = Path.Combine(tp, fn);
+            File.WriteAllText(fp, exp.ToString());
             return path;
         }
     }
