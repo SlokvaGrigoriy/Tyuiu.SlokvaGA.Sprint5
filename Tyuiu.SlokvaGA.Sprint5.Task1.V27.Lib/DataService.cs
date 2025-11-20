@@ -24,7 +24,7 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task1.V27.Lib
                 }
                 else
                 {
-                    fx = (-3*x-1.5/ Math.Sin(x)-3+x) + 2;
+                    fx = (3*x-1.5)/ denominator + 2;
                 }
 
                 fx = Math.Round(fx, 2);
