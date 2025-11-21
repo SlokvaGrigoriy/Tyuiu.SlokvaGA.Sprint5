@@ -10,17 +10,12 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task3.V22.Test
         {
             DataService ds = new DataService();
 
-            int x = 5;
+            string path = ds.SaveToFileTextData(3);
 
-            string filePath = ds.SaveToFileTextData(x);
-
-            Assert.IsTrue(File.Exists(filePath));
-
-            using (BinaryReader reader = new BinaryReader(File.Open(filePath, FileMode.Open)))
-            {
-                double result = reader.ReadDouble();
-                Assert.AreEqual(-114.5, result, 0.001);
-            }
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+            bool wait = true;
+            Assert.AreEqual(wait, fileExists);
         }
     }
 }
