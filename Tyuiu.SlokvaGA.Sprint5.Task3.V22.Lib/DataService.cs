@@ -7,9 +7,9 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task3.V22.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            string currentDirectory = Directory.GetCurrentDirectory();
+            string tempPath = Path.GetTempPath();
             string fileName = "OutPutFileTask3.bin";
-            string filePath = Path.Combine(currentDirectory, fileName);
+            string filePath = Path.Combine(tempPath, fileName);
             
             double y = Math.Round(Math.Pow(1 - x, 2) / (-3 * x), 3);
 
