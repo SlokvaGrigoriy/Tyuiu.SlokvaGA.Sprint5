@@ -8,7 +8,7 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task2.V8.Test
         [TestMethod]
         public void CheckedExistsFile()
         {
-            string path = @"C:\Users\Input\source\repos\Tyuiu.SlokvaGA.Sprint5\Tyuiu.SlokvaGA.Sprint5.Task2.V8\bin\Debug\net8.0\OutPutFileTask1.txt";
+            string path = @"C:\Users\Input\source\repos\Tyuiu.SlokvaGA.Sprint5\Tyuiu.SlokvaGA.Sprint5.Task2.V8\bin\Debug\net8.0\OutPutFileTask2.csv";
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
             bool wait = true;

@@ -8,7 +8,7 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task2.V8.Lib
         public string SaveToFileTextData(int[,] matrix)
         {
             string tempPath = Path.GetTempPath();
-            string fileName = "OutPutFileTask1.txt";
+            string fileName = "OutPutFileTask2.csv";
             string filePath = Path.Combine(tempPath, fileName);
             string csvContent = "";
 
