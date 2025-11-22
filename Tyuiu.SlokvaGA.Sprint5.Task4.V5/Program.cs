@@ -32,18 +32,17 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task4.V5
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                       *");
             Console.WriteLine("**************************************************************************");
 
-            int x = 3;
-            double y;
-            Console.WriteLine($"x = {x}");
-            Console.WriteLine($"Выражение = {y = Math.Pow(1 - x, 2) / (-3 * x)}");
+            string path = @"C:\DataSprint5\InPutDataFileTask4V5.txt";
+
+            Console.WriteLine("Файл для чтения: " + path);
 
             Console.WriteLine("************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                               *");
             Console.WriteLine("************************************************************");
 
-            string res = ds.SaveToFileTextData(x);
-            Console.WriteLine("Файл: " + res);
-            Console.WriteLine("Создан!");
+            double res = ds.LoadFromDataFile(path);
+            Console.WriteLine($"Результат: {res:F3}");
+
             Console.ReadKey();
         }
     }
