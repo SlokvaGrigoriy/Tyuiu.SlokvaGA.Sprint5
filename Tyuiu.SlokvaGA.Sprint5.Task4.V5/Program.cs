@@ -34,14 +34,14 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task4.V5
 
             string path = @"C:\DataSprint5\InPutDataFileTask4V5.txt";
 
-            Console.WriteLine("Файл для чтения: " + path);
+            Console.WriteLine("Данные находятся в файле: " + path);
 
             Console.WriteLine("************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                               *");
             Console.WriteLine("************************************************************");
 
             double res = ds.LoadFromDataFile(path);
-            Console.WriteLine($"Результат: {res:F3}");
+            Console.WriteLine(res);
 
             Console.ReadKey();
         }
