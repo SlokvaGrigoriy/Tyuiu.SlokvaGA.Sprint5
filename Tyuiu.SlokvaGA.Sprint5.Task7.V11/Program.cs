@@ -13,8 +13,8 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task7.V11
             Console.WriteLine("**************************************************************************");
             Console.WriteLine("* Спринт #5                                                              *");
             Console.WriteLine("* Тема: Добавление к решению итоговых проектов по спринту                *");
-            Console.WriteLine("* Задание #6                                                             *");
-            Console.WriteLine("* Вариант #27                                                            *");
+            Console.WriteLine("* Задание #7                                                             *");
+            Console.WriteLine("* Вариант #11                                                            *");
             Console.WriteLine("* Выполнил: Слоква Г. А. | ИСПб-25-1                                     *");
             Console.WriteLine("**************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                               *");
@@ -28,28 +28,35 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task7.V11
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                       *");
             Console.WriteLine("**************************************************************************");
 
-            string sourcePath = @"C:\DataSprint5\InputDataFileTask7V1.txt";
+            try
+            {
+                string path = @"C:\DataSprint5\InPutDataFileTask7V11.txt";
 
-            string tempDirectory = Path.GetTempPath();
-            string tempFileName = Path.GetFileName(sourcePath);
-            string tempFilePath = Path.Combine(tempDirectory, tempFileName);
+                if (!File.Exists(path))
+                {
+                    Console.WriteLine("Исходный файл не найден!");
+                    Console.ReadKey();
+                    return;
+                }
 
-            File.Copy(sourcePath, tempFilePath, true);
+                Console.WriteLine($"Данные в файле {path}:");
+                Console.WriteLine(File.ReadAllText(path));
+                Console.WriteLine("************************************************************");
+                Console.WriteLine("* РЕЗУЛЬТАТ:                                               *");
+                Console.WriteLine("************************************************************");
 
-            Console.WriteLine($"Файл скопирован в: {tempFilePath}");
+                string result = ds.LoadDataAndSave(path);
+                string outputPath = @"C:\DataSprint5\OutPutDataFileTask7V11.txt";
 
-            Console.WriteLine("************************************************************");
-            Console.WriteLine("* РЕЗУЛЬТАТ:                                               *");
-            Console.WriteLine("************************************************************");
-
-            string result = ds.LoadDataAndSave(tempFilePath);
-
-            string outputPath = Path.Combine(tempDirectory, "OutPutDataFileTask7V1.txt");
-            File.WriteAllText(outputPath, result);
-
-            Console.WriteLine($"Результат сохранён в: {outputPath}");
-            Console.WriteLine("Содержимое результата:");
-            Console.WriteLine(result);
+                File.WriteAllText(outputPath, result);
+                Console.WriteLine($"Результат сохранён в файле: {outputPath}");
+                Console.WriteLine("Содержимое обработанного файла:");
+                Console.WriteLine(result);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка: {ex.Message}");
+            }
 
             Console.ReadKey();
         }
