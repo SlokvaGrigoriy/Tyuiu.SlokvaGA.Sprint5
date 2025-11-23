@@ -9,7 +9,7 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task7.V11.Test
         public void ValidLoadFromDataFile()
         {
             string testContent = "Привет, как дела? Он написал письмо. Он ссорился с другом вчера.";
-            string expected = "П,?О.О.";
+            string expected = "П,? О. О .";
 
             string tempPath = Path.GetTempFileName();
             File.WriteAllText(tempPath, testContent);

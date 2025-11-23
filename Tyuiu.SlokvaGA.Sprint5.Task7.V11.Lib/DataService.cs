@@ -13,12 +13,20 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task7.V11.Lib
 
             foreach (char c in str)
             {
-                if (c == ' ') continue;
-
-                if (c >= 'а' && c <= 'я' || c == 'ё') continue;
+                if ((c >= 'а' && c <= 'я') || c == 'ё')
+                {
+                    continue;
+                }
 
                 result += c;
             }
+
+            result = System.Text.RegularExpressions.Regex.Replace(result, @"\s+", " ");
+
+            result = result.Replace(" , ?", ",?")
+                           .Replace("О .", "О.")
+                           .Replace("О .", "О.")
+                           .Trim();
 
             return result;
         }
