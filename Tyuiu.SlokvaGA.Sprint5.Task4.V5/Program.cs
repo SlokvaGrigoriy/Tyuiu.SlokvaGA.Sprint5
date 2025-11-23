@@ -18,7 +18,7 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task4.V5
             Console.WriteLine("* Выполнил: Слоква Г. А. | ИСПб-25-1                                     *");
             Console.WriteLine("**************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                               *");
-            Console.WriteLine("* Дан файл С:\\DataSprint5\\InPutDataFileTask4V0.txt (файл взять из      *");
+            Console.WriteLine("* Дан файл С:\\DataSprint5\\InPutDataFileTask4V5.txt (файл взять из      *");
             Console.WriteLine("* архива согласно вашему варианту. Создать папку вручную                 *");
             Console.WriteLine("* С:\\DataSprint5\\ и скопировать в неё файл) в котором есть             *");
             Console.WriteLine("* вещественное значение. Прочитать значение из файла и подставить вместо *");
