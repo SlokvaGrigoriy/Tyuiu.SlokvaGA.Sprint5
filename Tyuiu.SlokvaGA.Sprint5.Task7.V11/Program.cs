@@ -1,7 +1,7 @@
-﻿using Tyuiu.SlokvaGA.Sprint5.Task6.V27.Lib;
+﻿using Tyuiu.SlokvaGA.Sprint5.Task7.V11.Lib;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Tyuiu.SlokvaGA.Sprint5.Task6.V27
+namespace Tyuiu.SlokvaGA.Sprint5.Task7.V11
 {
     internal class Program
     {
@@ -18,11 +18,12 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task6.V27
             Console.WriteLine("* Выполнил: Слоква Г. А. | ИСПб-25-1                                     *");
             Console.WriteLine("**************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                               *");
-            Console.WriteLine("* Дан файл С:\\DataSprint5\\InPutDataFileTask6V27.txt (файл взять из      *");
+            Console.WriteLine("* Дан файл С:\\DataSprint5\\InPutDataFileTask7V11.txt (файл взять из      *");
             Console.WriteLine("* архива согласно вашему варианту. Создать папку вручную                 *");
             Console.WriteLine("* С:\\DataSprint5\\ и скопировать в неё файл) в котором есть набор       *");
-            Console.WriteLine("* символьных данных. Найти количество трехзначных чисел в заданной       *");
-            Console.WriteLine("* строке.                                                                *");
+            Console.WriteLine("* символьных данных. Удалить все пробелы и строчные русские буквы из     *");
+            Console.WriteLine("* файла. Полученный результат сохранить в файл                           *");
+            Console.WriteLine("* OutPutDataFileTask7V11.txt.                                            *");
             Console.WriteLine("**************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                       *");
             Console.WriteLine("**************************************************************************");
