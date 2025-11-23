@@ -1,7 +1,7 @@
-﻿using Tyuiu.SlokvaGA.Sprint5.Task5.V27.Lib;
+﻿using Tyuiu.SlokvaGA.Sprint5.Task6.V27.Lib;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Tyuiu.SlokvaGA.Sprint5.Task5.V27
+namespace Tyuiu.SlokvaGA.Sprint5.Task6.V27
 {
     internal class Program
     {
@@ -12,7 +12,7 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task5.V27
             Console.Title = "Спринт #5 | Выполнил: Слоква Г. А. | ИСПб-25-1";
             Console.WriteLine("**************************************************************************");
             Console.WriteLine("* Спринт #5                                                              *");
-            Console.WriteLine("* Тема: Чтение набора данных из текстового файла                         *");
+            Console.WriteLine("* Тема: Обработка текстовых файлов                                       *");
             Console.WriteLine("* Задание #6                                                             *");
             Console.WriteLine("* Вариант #27                                                            *");
             Console.WriteLine("* Выполнил: Слоква Г. А. | ИСПб-25-1                                     *");
@@ -37,8 +37,8 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task5.V27
 
             try
             {
-                double res = ds.LoadFromDataFile(path);
-                Console.WriteLine("Среднее значение целых чисел, делящихся на 5: " + res);
+                int res = ds.LoadFromDataFile(path);
+                Console.WriteLine("Количество трехзначных чисел в строке: " + res);
             }
             catch (Exception ex)
             {

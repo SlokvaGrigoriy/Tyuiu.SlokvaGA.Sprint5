@@ -1,26 +1,32 @@
 ﻿using System.Globalization;
+using System.Text.RegularExpressions;
 using tyuiu.cources.programming.interfaces.Sprint5;
 
-namespace Tyuiu.SlokvaGA.Sprint5.Task5.V27.Lib
+namespace Tyuiu.SlokvaGA.Sprint5.Task6.V27.Lib
 {
-    public class DataService : ISprint5Task5V27
+    public class DataService : ISprint5Task6V27
     {
-        public double LoadFromDataFile(string path)
+        public int LoadFromDataFile(string path)
         {
             string content = File.ReadAllText(path);
-            string[] numbers = content.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            int count = 0;
+            int currentDigits = 0;
 
-            List<double> divisibleNumbers = new List<double>();
-
-            foreach (string numStr in numbers)
+            foreach (char c in content)
             {
-                if (double.TryParse(numStr, out double number) && number % 5 == 0)
+                if (c >= '0' && c <= '9')
                 {
-                    divisibleNumbers.Add(Math.Round(number, 3));
+                    currentDigits++;
+                }
+                else
+                {
+                    if (currentDigits == 3) count++;
+                    currentDigits = 0;
                 }
             }
 
-            return divisibleNumbers.Count > 0 ? Math.Round(divisibleNumbers.Average(), 3) : 0;
+            if (currentDigits == 3) count++;
+            return count;
         }
     }
 }
