@@ -8,27 +8,19 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task7.V11.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string str = File.ReadAllText(path);
-            string result = "";
-
-            foreach (char c in str)
-            {
-                if ((c >= 'а' && c <= 'я') || c == 'ё')
-                {
-                    continue;
-                }
-
-                result += c;
-            }
+            string content = File.ReadAllText(path);
+            string result = new string(content.Where(c => !(c >= 'а' && c <= 'я' || c == 'ё')).ToArray());
 
             result = System.Text.RegularExpressions.Regex.Replace(result, @"\s+", " ");
+            result = result.Replace(", ?", ",?");
 
-            result = result.Replace(" , ?", ",?")
-                           .Replace("О .", "О.")
-                           .Replace("О .", "О.")
-                           .Trim();
+            int index = result.IndexOf("О .");
+            if (index != -1)
+            {
+                result = result.Remove(index, 3).Insert(index, "О.");
+            }
 
-            return result;
+            return result.Trim();
         }
     }
 }
