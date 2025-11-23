@@ -6,12 +6,20 @@ namespace Tyuiu.SlokvaGA.Sprint5.Task7.V11.Test
     public sealed class DataServiceTest
     {
         [TestMethod]
-        public void CheckedExistsFile()
+        public void ValidLoadFromDataFile()
         {
+            string testContent = "Привет, как дела? Он написал письмо. Он ссорился с другом вчера.";
+            string expected = "П,?О.О.";
+
+            string tempPath = Path.GetTempFileName();
+            File.WriteAllText(tempPath, testContent);
+
             DataService ds = new DataService();
-            string path = @"C:\DataSprint5\InPutDataFileTask6V27.txt";
-            int result = ds.LoadFromDataFile(path);
-            Assert.AreEqual(2, result);
+            string result = ds.LoadDataAndSave(tempPath);
+
+            File.Delete(tempPath);
+
+            Assert.AreEqual(expected, result);
         }
     }
 }
